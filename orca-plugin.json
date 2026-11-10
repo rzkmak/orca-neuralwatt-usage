@@ -4,10 +4,15 @@
   "execution": "trusted-worker",
   "id": "neuralwatt-usage",
   "name": "NeuralWatt Usage",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NeuralWatt quota, spend and credit balance in Orca's status bar.",
   "author": { "name": "rzkmak" },
   "license": "MIT",
+  "icon": "assets/icon.png",
+  "cover": {
+    "path": "images/cover.png",
+    "alt": "The NeuralWatt Balance item in Orca's status bar showing 62% used and $18.20 of credits, with the colour thresholds green until 75%, amber to 90% and red above"
+  },
   "engines": { "orca": ">=1.4.248" },
   "main": "src/main.ts",
   "pluginApi": 1,

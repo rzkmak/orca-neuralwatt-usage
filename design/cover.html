@@ -1,0 +1,53 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;padding:0;overflow:hidden;background:#0A0E14}</style></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#151C28"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#0A0E14"/>
+  <rect width="1600" height="1000" fill="url(#dots)"/>
+
+  <!-- registration marks -->
+  <g stroke="#30363D" stroke-width="2">
+    <path d="M56 72 h32 M72 56 v32"/>
+    <path d="M1512 72 h32 M1528 56 v32"/>
+    <path d="M56 944 h32 M72 928 v32"/>
+    <path d="M1512 944 h32 M1528 928 v32"/>
+  </g>
+
+  <!-- version chip -->
+  <rect x="1400" y="120" width="140" height="48" rx="8" fill="#0D1117" stroke="#21262D" stroke-width="2"/>
+  <text x="1470" y="152" text-anchor="middle" font-family="'SF Mono', Menlo, 'Courier New', monospace" font-size="24" fill="#8B949E">v0.0.2</text>
+
+  <!-- icon tile -->
+  <rect x="130" y="210" width="180" height="180" rx="40" fill="#0D1117" stroke="#21262D" stroke-width="2"/>
+  <path d="M244 242 L176 340 L232 340 L208 444 L282 316 L224 316 Z" fill="#FACC15"/>
+  <rect x="196" y="368" width="48" height="10" rx="3" fill="#3FB950"/>
+  <rect x="196" y="356" width="48" height="4" rx="2" fill="#F59E0B"/>
+
+  <text x="360" y="308" font-family="'SF Mono', Menlo, 'Courier New', monospace" font-size="92" font-weight="700" fill="#E6EDF3">NeuralWatt Balance</text>
+  <text x="364" y="372" font-family="'SF Mono', Menlo, 'Courier New', monospace" font-size="27" letter-spacing="4" fill="#8B949E">NEURALWATT USAGE FOR ORCA'S STATUS BAR</text>
+
+  <line x1="364" y1="416" x2="1120" y2="416" stroke="#21262D" stroke-width="2"/>
+  <text x="364" y="472" font-family="'SF Mono', Menlo, 'Courier New', monospace" font-size="28" fill="#8B949E">$ GET /v1/quota <tspan fill="#3FB950">200 OK</tspan><tspan fill="#30363D" dx="18">|</tspan><tspan fill="#6E7681" dx="18">refresh 5 min · cache 60 s</tspan></text>
+
+  <!-- status bar strip -->
+  <rect x="0" y="690" width="1600" height="100" fill="#0D1117"/>
+  <rect x="0" y="690" width="1600" height="2" fill="#21262D"/>
+
+  <path d="M100 716 L68 764 L94 764 L82 812 L118 760 L90 760 Z" fill="#FACC15"/>
+  <text x="136" y="754" font-family="'SF Mono', Menlo, 'Courier New', monospace" font-size="30" font-weight="700" fill="#E6EDF3">NeuralWatt Balance</text>
+  <text x="452" y="754" font-family="'SF Mono', Menlo, 'Courier New', monospace" font-size="30" fill="#30363D">|</text>
+  <text x="482" y="754" font-family="'SF Mono', Menlo, 'Courier New', monospace" font-size="30" font-weight="700" fill="#F59E0B">62%</text>
+  <text x="560" y="754" font-family="'SF Mono', Menlo, 'Courier New', monospace" font-size="30" fill="#30363D">|</text>
+  <text x="590" y="754" font-family="'SF Mono', Menlo, 'Courier New', monospace" font-size="30" font-weight="700" fill="#3FB950">$18.20</text>
+
+  <text x="1360" y="754" font-family="'SF Mono', Menlo, 'Courier New', monospace" font-size="26" fill="#8B949E">main ✓</text>
+
+  <text x="70" y="880" font-family="'SF Mono', Menlo, 'Courier New', monospace" font-size="26" fill="#6E7681">green &lt; 75 · amber 75–89 · red ≥ 90 · red in overage</text>
+</svg>
+</body></html>

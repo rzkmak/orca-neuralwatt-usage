@@ -91,6 +91,9 @@ orca-neuralwatt-usage/
 ├── DESIGN.md               # this document
 ├── package.json            # npm test → node --test (only devDependency: @types/node)
 ├── tsconfig.json           # extends .orca/types/tsconfig.json (from `orca plugin types .`)
+├── assets/icon.png         # 256×256 plugin icon (flat, rendered from design/icon.html)
+├── images/cover.png        # 1600×1000 plugin-page cover (16:10, ≤1024 KB, from design/cover.html)
+├── design/                 # HTML/SVG sources for the icon + cover (re-render with headless Chrome)
 └── src/
     ├── protocol.ts         # shared types (all fields required, nulls for unknown — JSON-safe) + storage type guard
     ├── neuralwatt.ts       # pure API client + response normalizer (no Orca imports → unit-testable)
