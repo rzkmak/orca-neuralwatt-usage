@@ -1,0 +1,81 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stablyai/orca/main/docs/schemas/plugins/orca-plugin.v2.schema.json",
+  "manifestVersion": 2,
+  "execution": "trusted-worker",
+  "id": "neuralwatt-usage",
+  "name": "NeuralWatt Usage",
+  "version": "0.0.1",
+  "description": "NeuralWatt quota, spend and credit balance in Orca's status bar.",
+  "author": { "name": "rzkmak" },
+  "license": "MIT",
+  "engines": { "orca": ">=1.4.248" },
+  "main": "src/main.ts",
+  "pluginApi": 1,
+  "contributes": {
+    "statusBarItems": [
+      {
+        "id": "neuralwatt",
+        "text": "NeuralWatt Balance …",
+        "icon": "zap",
+        "tooltip": "NeuralWatt usage",
+        "command": "neuralwatt.refresh"
+      }
+    ],
+    "commands": [
+      {
+        "id": "neuralwatt.refresh",
+        "title": "NeuralWatt: Refresh usage now"
+      },
+      {
+        "id": "neuralwatt.forgetKeys",
+        "title": "NeuralWatt: Forget stored API key"
+      }
+    ],
+    "settings": [
+      {
+        "key": "apiKey",
+        "title": "API key",
+        "type": "string",
+        "maxLength": 256,
+        "placeholder": "Paste your NeuralWatt API key",
+        "description": "Entry-only: on the next refresh the key is moved into the encrypted secret store (macOS Keychain) and this field is cleared. Sent only to https://api.neuralwatt.com. To remove the stored key run 'NeuralWatt: Forget stored API key'. Leave empty to borrow the key from OpenCode instead."
+      },
+      {
+        "key": "openCodeUrl",
+        "title": "OpenCode server URL",
+        "type": "string",
+        "maxLength": 512,
+        "placeholder": "http://127.0.0.1:4096",
+        "description": "Optional. Used only when no API key is stored: borrows the NeuralWatt credential from a running OpenCode server, from 'opencode auth export', or from OpenCode's legacy auth file — in that order."
+      },
+      {
+        "key": "openCodePassword",
+        "title": "OpenCode server password",
+        "type": "string",
+        "maxLength": 256,
+        "description": "Optional. Entry-only: moved into the encrypted secret store and cleared from this field; a ?password= in the server URL is moved too. Leave empty when the server has none."
+      },
+      {
+        "key": "refreshMinutes",
+        "title": "Refresh interval (minutes)",
+        "type": "integer",
+        "default": 5,
+        "minimum": 1,
+        "maximum": 60
+      },
+      {
+        "key": "display",
+        "title": "Status bar display",
+        "type": "string",
+        "default": "both",
+        "enum": ["percent", "credits", "both"],
+        "enumLabels": ["Window percent", "Credits balance", "Percent and credits"]
+      }
+    ]
+  },
+  "capabilities": [
+    { "kind": "settings:own" },
+    { "kind": "storage:own" },
+    { "kind": "secrets:own" }
+  ]
+}
